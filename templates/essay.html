@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<table>
+        <tr><th>S.No</th>
+        <th>GameID</th>
+        <th>Link</th>
+       </tr>
+       {% for i in key %}
+      <tr><td>{{key.index(i)+1}}</td><td>{{i}}</td><td><a href ="{{ temp[i] }}">Click !</a></td></tr>
+    {% endfor %}
+    
+</table>
+
+{% endblock %}
