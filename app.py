@@ -8,9 +8,10 @@ app = Flask(__name__)
 
 @app.route('/',methods=['GET','POST'])
 def index():
-   rollnum,passw=request.args.get("rno"),request.args.get("pass")
+   
    print("hii")
-   if request.method == "GET":
+   if request.method == "POST":
+      rollnum,passw=request.args.get("rno"),request.args.get("pass")
       print(rollnum)
       print(passw)
       url = os.getenv("db_url") 
