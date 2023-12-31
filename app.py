@@ -21,7 +21,7 @@ def index():
       
       headers = {
     'content-type': "application/json",
-    'x-apikey': os.getenv("x-apikey") ,
+    'x-apikey': os.getenv("x_apikey") ,
     'cache-control': "no-cache"
     }
       
@@ -44,7 +44,7 @@ def main(abc):
    #payload = json.dumps( {"rollNo": abc ,"dob": "26012003","data":{ "DEC23":"HSJSJWJWJ","WJWJ":"WHWH"}} )
    headers = {
     'content-type': "application/json",
-    'x-apikey': os.getenv("x-apikey"),
+    'x-apikey': os.getenv("x_apikey"),
     'cache-control': "no-cache"
     }
    heyy={"q":json.dumps({"rollNo": f"{abc}"})}
