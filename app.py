@@ -35,6 +35,9 @@ def index():
          return render_template("essay.html",key=key,temp=tempor)
       else:
          return render_template("invalid.html")
+   else:
+      return "<html><title>Welcome</title><body><h1>Happy day</h1></body></html>"
+
 
 def main(abc):
    url = os.getenv("db_url")
