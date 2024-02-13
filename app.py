@@ -29,7 +29,7 @@ def index():
       temp=response.json()[0]
       print(temp)
       print(type(temp.get("dob")),type(passw))
-      if ((str(temp.get("dob"))== passw) and (str(temp.get("rollNo"))== str(rollnum))):
+      if ((str(temp.get("dob"))== str(passw) ) and (str(temp.get("rollNo"))== str(rollnum))):
          print("haleluya")
          tempor=temp.get("data")
          key=list(tempor.keys())
