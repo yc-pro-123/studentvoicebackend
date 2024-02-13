@@ -26,7 +26,7 @@ def index():
     }
       
       response = requests.get(url,params=heyy, headers=headers)
-      temp=response.json()[0] 
+      temp=response.json()
       print(type(temp.get("dob")),type(passw))
       if ((str(temp.get("dob"))== passw) and (str(temp.get("rollNo"))== str(rollnum))):
          print("haleluya")
