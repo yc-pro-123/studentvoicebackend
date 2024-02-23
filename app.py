@@ -44,7 +44,7 @@ def index():
          print(sto)
          print(type(sto.get("dob")),type(passw))
       except:
-         return [ false, "Login with Valid Details"]
+         return [ False, "Login with Valid Details"]
          
       if ((str(sto.get("dob"))== str(passw) ) and (str(sto.get("rollNo"))== str(rollnum))):
          print("haleluya")
@@ -60,9 +60,9 @@ def index():
              i+=1
          t+="</table> "
          redata.append(t)
-         return [true , redata]
+         return [True , redata]
       else:
-         return [ false, "Invalid Credentials "]
+         return [ False, "Invalid Credentials "]
    else:
       return "<html><title>Welcome</title><body><h1>Happy day</h1></body></html>"
 
