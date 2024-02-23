@@ -47,6 +47,7 @@ def index():
          
       if ((str(sto.get("dob"))== str(passw) ) and (str(sto.get("rollNo"))== str(rollnum))):
          print("haleluya")
+          redata=[]
          gamedict=sto.get("data")
          gameid=list(gamedict.keys())
          t=f"""<table>
