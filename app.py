@@ -44,12 +44,13 @@ def index():
          print(sto)
          print(type(sto.get("dob")),type(passw))
       except:
-         return [ False, "Login with Valid Details"]
+         return [ false, "Login with Valid Details"]
          
       if ((str(sto.get("dob"))== str(passw) ) and (str(sto.get("rollNo"))== str(rollnum))):
          print("haleluya")
          redata=[]
          gamedict=sto.get("data")
+         redata.append(sto.get("name"))
          gameid=list(gamedict.keys())
          t=f"""<table>
 <tr><th rowspan="2" style="width:40px">S.no</th><th rowspan="2">Game ID/Date</th><th colspan="2">Certificates</th></tr>
@@ -60,9 +61,9 @@ def index():
              i+=1
          t+="</table> "
          redata.append(t)
-         return [True , redata]
+         return [true , redata]
       else:
-         return [ False, "Invalid Credentials "]
+         return [ false, "Invalid Credentials "]
    else:
       return "<html><title>Welcome</title><body><h1>Happy day</h1></body></html>"
 
