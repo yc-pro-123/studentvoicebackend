@@ -21,9 +21,7 @@ def drivdownurl(txt):
    
 
 @app.route('/',methods=['GET','POST'])
-def index():
-def index():
-   
+def index():   
    print("hii")
    if request.method == "POST":
       rollnum,passw=request.args.get("rno"),request.args.get("pass")
