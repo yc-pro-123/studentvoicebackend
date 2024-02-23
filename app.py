@@ -40,16 +40,16 @@ def index():
     }
       try:
          response = requests.get(url,params=heyy, headers=headers)
-         temp=response.json()[0]
-         print(temp)
-         print(type(temp.get("dob")),type(passw))
+         sto=response.json()[0]
+         print(sto)
+         print(type(sto.get("dob")),type(passw))
       except:
          return [ false, "Login with Valid Details"]
          
-      if ((str(temp.get("dob"))== str(passw) ) and (str(temp.get("rollNo"))== str(rollnum))):
+      if ((str(sto.get("dob"))== str(passw) ) and (str(sto.get("rollNo"))== str(rollnum))):
          print("haleluya")
-         tempor=temp.get("data")
-         key=list(tempor.keys())
+         gamedict=sto.get("data")
+         gameid=list(gamedict.keys())
 
 
 
@@ -68,10 +68,12 @@ def index():
 </a>
 </td></tr>"
 
-
-         return render_template("essay.html",key=key,temp=tempor)
+          i+=1
+          t+="</table> "
+          redata.append(t)
+          return [true , redata]
       else:
-         return render_template("invalid.html")
+         return [ false, "Invalid Credentials "]
    else:
       return "<html><title>Welcome</title><body><h1>Happy day</h1></body></html>"
 
