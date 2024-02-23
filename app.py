@@ -21,7 +21,8 @@ def drivdownurl(txt):
    
 
 @app.route('/',methods=['GET','POST'])
-def index():   
+def index():
+   
    print("hii")
    if request.method == "POST":
       rollnum,passw=request.args.get("rno"),request.args.get("pass")
@@ -46,7 +47,8 @@ def index():
          return [ false, "Login with Valid Details"]
          
       if ((str(sto.get("dob"))== str(passw) ) and (str(sto.get("rollNo"))== str(rollnum))):
-         print("haleluya")redata=[]
+         print("haleluya")
+         redata=[]
          gamedict=sto.get("data")
          gameid=list(gamedict.keys())
          t=f"""<table>
