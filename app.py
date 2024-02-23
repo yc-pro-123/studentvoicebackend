@@ -4,7 +4,21 @@ import requests
 import json
 
 app = Flask(__name__)
+def drivdownurl(txt):
+    #print(txt)
+    if re.findall("drive",txt):
+      #print("Yes, its Google one !")
+      pass
+    else:
+      #print("Not A Google")
+      return txt
+#Check if the string has any a, r, or n characters:
+    x = re.sub("file[/]d[/]","uc?id=", txt)
+    x = re.sub("[/]view[?]usp[=]sharing","&export=download", x)
 
+    #print(x)
+    return txt
+   
 
 @app.route('/',methods=['GET','POST'])
 def index():
@@ -24,15 +38,23 @@ def index():
     'x-apikey': os.getenv("x_apikey") ,
     'cache-control': "no-cache"
     }
-      
-      response = requests.get(url,params=heyy, headers=headers)
-      temp=response.json()[0]
-      print(temp)
-      print(type(temp.get("dob")),type(passw))
+      try:
+         response = requests.get(url,params=heyy, headers=headers)
+         temp=response.json()[0]
+         print(temp)
+         print(type(temp.get("dob")),type(passw))
+      except:
+         return [ false, "Login with Valid Details"]
+         
       if ((str(temp.get("dob"))== str(passw) ) and (str(temp.get("rollNo"))== str(rollnum))):
          print("haleluya")
          tempor=temp.get("data")
          key=list(tempor.keys())
+
+
+
+
+         
          return render_template("essay.html",key=key,temp=tempor)
       else:
          return render_template("invalid.html")
