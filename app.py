@@ -19,7 +19,7 @@ def drivdownurl(txt):
     #print(x)
     return txt
    
-@app.route('/ht'.methods=['GET'])
+@app.route('/ht',methods=['GET'])
 def ht():
     return request.headers
 
