@@ -21,7 +21,7 @@ def drivdownurl(txt):
    
 @app.route('/ht',methods=['GET'])
 def ht():
-    return request.headers
+    return str(request.headers)
 
 @app.route('/',methods=['GET','POST'])
 def index():
