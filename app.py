@@ -19,6 +19,9 @@ def drivdownurl(txt):
     #print(x)
     return txt
    
+@app.route('/ht'.methods=['GET'])
+def ht():
+    return request.headers
 
 @app.route('/',methods=['GET','POST'])
 def index():
